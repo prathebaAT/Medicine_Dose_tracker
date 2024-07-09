@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'medtracker'
+    'rest_framework',
+    'medtracker',
 ]
 
 MIDDLEWARE = [
