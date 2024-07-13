@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import timedelta, datetime
 
+
+
 class Medicine(models.Model):
     medicine_name = models.CharField(max_length=100)
     description = models.TextField(blank = True, null = True)
@@ -9,6 +11,7 @@ class Medicine(models.Model):
     dosage_form = models.CharField(max_length=50, blank=True, null=True)
     expiration_date =models.DateField(blank=True, null=True)
     stock = models.IntegerField()
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.medicine_name
@@ -28,4 +31,4 @@ class Dosage(models.Model):
     frequency = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.quantity} {self.unit} of {self.medicine.name} on {self.date} at {self.time}"
+        return f"{self.patient} added {self.quantity} {self.unit} of {self.medicine.medicine_name} on {self.date} at {self.time}"
