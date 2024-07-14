@@ -42,9 +42,9 @@ python manage.py runserver
 
 ## API ENDPOINTS
 
-## Register: POST /register/
-## Login: POST /login/
-## Logout: POST /logout/
+### Register: POST /register/
+### Login: POST /login/
+### Logout: POST /logout/
 
 ## Medicines:
 
