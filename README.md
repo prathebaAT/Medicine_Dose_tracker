@@ -42,24 +42,24 @@ python manage.py runserver
 
 ## API ENDPOINTS
 
-### Register: POST /register/
-### Login: POST /login/
-### Logout: POST /logout/
+### Register: POST api/register/
+### Login: POST api/login/
+### Logout: POST api/logout/
 
 ## Medicines:
 
 ### GET /api/medicines/ - List all medicines of the authenticated user.
 ### POST /api/medicines/ - Create a new medicine.
-### GET /api/medicines/<id>/ - Retrieve a specific medicine.
-### PUT /api/medicines/<id>/ - Update a specific medicine.
-### DELETE /api/medicines/<id>/ - Delete a specific medicine.
+### GET /api/medicines/<medicine_id>/ - Retrieve a specific medicine.
+### PUT /api/medicines/<medicine_id>/ - Update a specific medicine.
+### DELETE /api/medicines/<medicine_id>/ - Delete a specific medicine.
 
 ## Dosages:
 
-### GET /api/dosages/ - List all dosages of the authenticated user.
-### POST /api/dosages/ - Create a new dosage.
-### GET /api/dosages/<id>/ - Retrieve a specific dosage.
-### PUT /api/dosages/<id>/ - Update a specific dosage.
-### DELETE /api/dosages/<id>/ - Delete a specific dosage.
+### GET /api/medicines/<medicine_id>/dosages/ - List all dosages of  specific medicine of the authenticated user.
+### POST /api/medicines/<medicine_id>/dosages/ - Create a new dosage for a specific medicine.
+### GET /api/medicines/<medicine_id>/dosages/<dosage_id>- Retrieve a specific dosage.
+### PUT /api/medicines/<medicine_id>/dosages/<dosage_id> - Update a specific dosage.
+### DELETE /api/medicines/<medicine_id>/dosages/<dosage_id> - Delete a specific dosage.
 
 
