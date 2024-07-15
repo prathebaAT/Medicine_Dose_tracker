@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'medtracker',
     'debug_toolbar',
    
@@ -135,14 +136,14 @@ REST_FRAMEWORK = {
     ),
 }
 
-# from datetime import timedelta
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-# }
-
 INTERNAL_IPS = [
    
     '127.0.0.1',
    
 ]
+from datetime import timedelta
+SIMPLE_JWT = {
+      'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
+      'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+ }
+

@@ -33,7 +33,7 @@ class DosageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dosage
         fields = '__all__'
-        read_only_fields = ('patient',)
+        read_only_fields = ('medicine','patient',)
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):

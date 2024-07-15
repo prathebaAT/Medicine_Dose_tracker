@@ -43,10 +43,19 @@ class MedicineViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Medicine.objects.filter(created_by=self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
 
 class DosageViewSet(viewsets.ModelViewSet):
     queryset = Dosage.objects.all()
     serializer_class = DosageSerializer
 
     def get_queryset(self):
-        return Dosage.objects.filter(patient=self.request.user)
+        medicine_id = self.kwargs['medicine_pk']
+        return Dosage.objects.filter(patient=self.request.user, medicine_id=medicine_id)
+
+    def perform_create(self, serializer):
+        medicine_id = self.kwargs['medicine_pk']
+        medicine = Medicine.objects.get(id=medicine_id)
+        serializer.save(patient=self.request.user, medicine=medicine)
