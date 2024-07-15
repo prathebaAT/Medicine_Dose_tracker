@@ -50,16 +50,16 @@ python manage.py runserver
 
 ### GET /api/medicines/ - List all medicines of the authenticated user.
 ### POST /api/medicines/ - Create a new medicine.
-### GET /api/medicines/<medicine_id>/ - Retrieve a specific medicine.
-### PUT /api/medicines/<medicine_id>/ - Update a specific medicine.
-### DELETE /api/medicines/<medicine_id>/ - Delete a specific medicine.
+### GET /api/medicines/medicine_id/ - Retrieve a specific medicine.
+### PUT /api/medicines/medicine_id/ - Update a specific medicine.
+### DELETE /api/medicines/medicine_id/ - Delete a specific medicine.
 
 ## Dosages:
 
-### GET /api/medicines/<medicine_id>/dosages/ - List all dosages of  specific medicine of the authenticated user.
-### POST /api/medicines/<medicine_id>/dosages/ - Create a new dosage for a specific medicine.
-### GET /api/medicines/<medicine_id>/dosages/<dosage_id>- Retrieve a specific dosage.
-### PUT /api/medicines/<medicine_id>/dosages/<dosage_id> - Update a specific dosage.
-### DELETE /api/medicines/<medicine_id>/dosages/<dosage_id> - Delete a specific dosage.
+### GET /api/medicines/medicine_id/dosages/ - List all dosages of  specific medicine of the authenticated user.
+### POST /api/medicines/medicine_id/dosages/ - Create a new dosage for a specific medicine.
+### GET /api/medicines/medicine_id/dosages/dosage_id/- Retrieve a specific dosage.
+### PUT /api/medicines/medicine_id/dosages/dosage_id/ - Update a specific dosage.
+### DELETE /api/medicines/medicine_id/dosages/dosage_id/ - Delete a specific dosage.
 
 
