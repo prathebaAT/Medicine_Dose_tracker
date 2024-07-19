@@ -6,7 +6,7 @@ from datetime import timedelta, datetime
 
 class Medicine(models.Model):
     medicine_name = models.CharField(max_length=100)
-    description = models.TextField(blank = True, null = True)
+    composition = models.TextField(blank = True, null = True)
     manufacturer = models.CharField(max_length=100, blank=True, null=True)
     dosage_form = models.CharField(max_length=50, blank=True, null=True)
     expiration_date =models.DateField(blank=True, null=True)
