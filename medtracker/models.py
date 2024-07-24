@@ -16,8 +16,8 @@ class Medicine(models.Model):
     def __str__(self):
         return self.medicine_name
     
-    def calculate_due_date():
-        pass
+ 
+                                                                                                   
 
 class Dosage(models.Model):
     medicine = models.ForeignKey(Medicine, on_delete=models.CASCADE)
@@ -32,3 +32,10 @@ class Dosage(models.Model):
 
     def __str__(self):
         return f"{self.patient} added {self.quantity} {self.unit} of {self.medicine.medicine_name} on {self.date} at {self.time}"
+
+    def calculate_due_date(self):
+        frequency_per_day = int(self.frequency)
+        depletion_days = self.medicine.stock / frequency_per_day
+        depletion_date = self.date + timedelta(days=depletion_days)
+        reminder_date = depletion_date - timedelta(days=3)
+        return depletion_date, reminder_date
